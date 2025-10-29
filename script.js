@@ -1,20 +1,26 @@
-//your JS code here. If required.
+// Select all three squares
 const squares = document.querySelectorAll(".square");
 
+// For each square, attach event listeners
 squares.forEach((square) => {
-  square.addEventListener("mouseenter", () => {
+  // When hovered
+  square.addEventListener("mouseover", () => {
     squares.forEach((s) => {
-      if (s !== square) {
-        s.style.backgroundColor = "#6F4E37"; // Coffee color
+      if (s === square) {
+        // hovered one remains Lavender
+        s.style.backgroundColor = "#E6E6FA";
       } else {
-        s.style.backgroundColor = "#E6E6FA"; // Lavender (hovered one)
+        // others become Coffee
+        s.style.backgroundColor = "#6F4E37";
       }
     });
   });
 
-  square.addEventListener("mouseleave", () => {
+  // When mouse leaves any square
+  square.addEventListener("mouseout", () => {
     squares.forEach((s) => {
-      s.style.backgroundColor = "#E6E6FA"; // Reset all to Lavender
+      // Reset all to Lavender
+      s.style.backgroundColor = "#E6E6FA";
     });
   });
 });
